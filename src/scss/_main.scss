@@ -1,0 +1,15 @@
+.main__wrapper {
+  height: 100%;
+  .main__image {
+    height: 150px;
+    background-image: url("../img/intro-img 1.png");
+    background-size: 100% 100%;
+    width: 100%;
+    @media (max-width: 1199px) and (min-width: 768px) {
+      height: 361px;
+    }
+    @media (min-width: 1200px) {
+      height: 550px;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+.idea/**/*
+node_module/**/*
+.DS_STORE
+*.xml
+*.iml
+package-lock.json
+.vscode/
+node_modules/

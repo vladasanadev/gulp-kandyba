@@ -1,0 +1,139 @@
+.insta {
+  height: 100%;
+
+  .insta__title-wrapper {
+    width: 80%;
+    margin: auto;
+    .insta__title2 {
+      @include title();
+    }
+
+    .insta__title {
+      @include title();
+    }
+  }
+  .insta__container {
+    height: 416px;
+    height: auto;
+    width: 90%;
+    margin: 0 auto;
+    .insta__img1 {
+      max-width: 301px;
+      height: 301px;
+      background-image: url("../img/post1.png");
+      background-size: 100% 100%;
+      width: 100%;
+
+      background-repeat: no-repeat;
+      margin: 1rem 0rem;
+    }
+    @media (max-width: 1199px) and (min-width: 768px) {
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      .insta__img1 {
+        max-width: calc(90% / 3);
+        max-width: 249px;
+        height: 249px;
+        background-image: url("../img/post1.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 1rem 1rem;
+        width: 30%;
+      }
+      .insta__img2 {
+        max-width: calc(90% / 3);
+        max-width: 249px;
+        height: 249px;
+        background-image: url("../img/insta2.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 1rem 1rem;
+        width: 30%;
+      }
+      .insta__img3 {
+        max-width: calc(90% / 3);
+        max-width: 249px;
+        height: 249px;
+        background-image: url("../img/post-3.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 1rem 1rem;
+        width: 30%;
+      }
+    }
+    @media (min-width: 1200px) {
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      .insta__img1 {
+        max-width: calc(90% / 4);
+        max-width: 249px;
+        height: 249px;
+        background-image: url("../img/post1.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 1rem 1rem;
+        width: 30%;
+      }
+      .insta__img2 {
+        max-width: calc(90% / 4);
+        max-width: 249px;
+        height: 249px;
+        background-image: url("../img/insta2.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 1rem 1rem;
+        width: 30%;
+      }
+      .insta__img3 {
+        max-width: calc(90% / 4);
+        max-width: 249px;
+        height: 249px;
+        background-image: url("../img/post-3.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 1rem 1rem;
+        width: 30%;
+      }
+      .insta__img4 {
+        max-width: calc(90% / 4);
+        max-width: 249px;
+        height: 249px;
+        background-image: url("../img/post1.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 1rem 1rem;
+        width: 30%;
+      }
+    }
+  }
+  @media (max-width: 1199px) and (min-width: 768px) {
+    width: 100%;
+    height: auto;
+    background-color: lightgray;
+    .insta__title-wrapper {
+      display: flex;
+      justify-content: space-between;
+      flex: 1;
+      .insta__title2 {
+        display: block;
+      }
+    }
+  }
+  @media (min-width: 1200px) {
+    width: 100%;
+    height: auto;
+    background-color: lightgray;
+    .insta__title-wrapper {
+      display: flex;
+      justify-content: space-between;
+      flex: 1;
+      .insta__title2 {
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+.footer {
+  width: 100%;
+  color: white;
+  background-color: black;
+  .text-container {
+    margin: 0 35px;
+
+    @include flex-center();
+
+    .footer__title {
+      @include title();
+      color: white;
+      margin: 1rem;
+    }
+    .first-description {
+      text-align: center;
+      color: #b9b9b9;
+      font-size: 12px;
+      @include flex-center();
+      margin-bottom: 26px;
+    }
+  }
+  .footer__social-media-circles {
+    .circle__container {
+      @include flex-center--row();
+      flex-wrap: wrap;
+      .circle--orange {
+        @include circle--color(#f8902e);
+        .icon {
+          @include circle-icon("../img/rss-icon.png", 10px, "");
+        }
+      }
+    }
+
+    .circle--lightblue {
+      @include circle--color(#39599f);
+      .icon {
+        @include circle-icon("../img/facebook-icon.png", 12px, "");
+      }
+    }
+
+    .circle--lightblue {
+      @include circle--color(#39599f);
+      .icon {
+        @include circle-icon("../img/facebook-icon.png", 10px, 10px);
+      }
+    }
+
+    .circle--blue {
+      @include circle--color(#45b0e3);
+      .icon {
+        @include circle-icon("../img/twitter-icon.png", 10px, 10px);
+      }
+    }
+
+    .circle--pink {
+      @include circle--color(#d97ab0);
+      .icon {
+        @include circle-icon("../img/dribbble-icon.png", 10px, 10px);
+      }
+    }
+
+    .circle--red {
+      @include circle--color(#cc212c);
+      .icon {
+        @include circle-icon("../img/pinterest-icon.png", 11px, 10px);
+      }
+    }
+  }
+  .footer__adress {
+    margin: 25px;
+    text-align: center;
+  }
+}
