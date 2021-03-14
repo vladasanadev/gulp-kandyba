@@ -10,3 +10,16 @@
   box-sizing: border-box;
   font-family: Roboto;
 }
+body {
+  line-height: 1;
+}
+
+menu,
+ol,
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}

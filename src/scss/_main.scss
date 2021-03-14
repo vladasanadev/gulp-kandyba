@@ -1,10 +1,9 @@
 .main__wrapper {
-  height: 100%;
+  padding: 1rem 2rem;
   .main__image {
     height: 150px;
     background-image: url("../img/intro-img 1.png");
     background-size: 100% 100%;
-    width: 100%;
     @media (max-width: 1199px) and (min-width: 768px) {
       height: 361px;
     }

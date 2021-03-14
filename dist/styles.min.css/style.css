@@ -1,121 +1,139 @@
-.container {
-  max-width: 373px;
-  width: 90%;
-  margin: auto;
-  background: rgba(0, 0, 0, 0.0001); }
-  @media (max-width: 1199px) and (min-width: 768px) {
-    .container {
-      max-width: 768px;
-      height: auto;
-      width: 100%; } }
-  @media (min-width: 1200px) {
-    .container {
-      max-width: 1200px;
-      width: 90%;
-      height: auto; } }
+.wrapper {
+  padding: 0 1rem; }
 
-.navigation {
-  height: 57px;
-  background-color: white;
-  position: sticky;
-  top: 0; }
-  .navigation .navigation__burger-menu #menu__toggle {
-    opacity: 0; }
-  .navigation .navigation__burger-menu .menu__btn {
+.header__navigation {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 1rem 1.5rem; }
+
+.header__switch-label {
+  width: 37px;
+  height: 37px;
+  display: block;
+  cursor: pointer;
+  position: relative; }
+
+span {
+  width: 26px;
+  height: 3px;
+  border-radius: 10px;
+  background-color: black;
+  display: block;
+  position: absolute;
+  top: 40px;
+  right: 20px; }
+
+span::before {
+  content: "";
+  width: 26px;
+  height: 3px;
+  border-radius: 10px;
+  background-color: black;
+  display: block;
+  position: absolute;
+  top: -10px;
+  right: 0; }
+
+span::after {
+  content: "";
+  width: 26px;
+  height: 3px;
+  border-radius: 10px;
+  background-color: black;
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 0; }
+
+.header__menu {
+  display: none;
+  position: absolute;
+  z-index: 999;
+  top: 100%;
+  left: 2%;
+  width: 30%; }
+
+.nav {
+  background-color: lightgrey;
+  width: 100%; }
+
+.nav__list {
+  list-style-type: none;
+  font-size: 26px;
+  line-height: 28px;
+  color: #4e4e4e; }
+
+.nav__list-item {
+  padding: 16px 0;
+  border-bottom: 1px solid #3b3b3b;
+  list-style-type: none;
+  background-color: #f5f5f5;
+  color: darkgray; }
+
+.nav__list-item a {
+  display: block;
+  padding-left: 30px;
+  border-left: 8px solid transparent;
+  text-transform: uppercase;
+  color: #4e4e4e;
+  font-size: 11px; }
+
+.nav__list-item a:hover {
+  color: #8d81ac;
+  border-left: 0.8rem solid #8d81ac; }
+
+.collapsable-input {
+  display: none; }
+
+#collapsable-menu:checked ~ #collapsable {
+  display: block; }
+
+#collapsable-menu:checked ~ .header__switch-label > span {
+  transform: rotate(45deg); }
+
+#collapsable-menu:checked ~ .header__switch-label > span::before {
+  top: 0;
+  transform: rotate(0); }
+
+#collapsable-menu:checked ~ .header__switch-label > span::after {
+  top: 0;
+  transform: rotate(90deg); }
+
+@media (min-width: 768px) {
+  span {
+    display: none; }
+  .header__menu {
     display: flex;
-    align-items: center;
-    position: fixed;
-    top: 20px;
-    right: 17px;
-    width: 44px;
-    height: 37px;
-    cursor: pointer;
-    z-index: 1;
-    background-color: black; }
-  .navigation .navigation__burger-menu .menu__btn > span,
-  .navigation .navigation__burger-menu .menu__btn > span::before,
-  .navigation .navigation__burger-menu .menu__btn > span::after {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
+    flex-wrap: wrap;
+    position: static;
+    flex-basis: 85%;
+    margin-top: 2rem;
+    align-items: center; }
+  .nav {
+    background-color: unset;
     width: 100%;
-    height: 2px;
-    background-color: white; }
-  .navigation .navigation__burger-menu .menu__btn > span::before {
-    content: "";
-    top: -8px; }
-  .navigation .navigation__burger-menu .menu__btn > span::after {
-    content: "";
-    top: 8px; }
-  .navigation .navigation__burger-menu .menu__box {
-    display: block;
-    position: fixed;
-    visibility: hidden;
-    top: 0;
-    right: -100%;
-    width: 182px;
-    margin: 20px 20px;
-    padding: 20px 0;
-    list-style: none;
-    text-align: center;
-    background-color: #eceff1;
-    box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2); }
-  .navigation .navigation__burger-menu .menu__item {
-    display: block;
-    padding: 12px 24px;
-    color: #333;
-    font-family: "Roboto", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    text-decoration: none; }
-  .navigation .navigation__burger-menu .menu__item:hover {
-    background-color: #cfd8dc; }
-  .navigation .navigation__burger-menu #menu__toggle:checked ~ .menu__btn > span {
-    transform: rotate(45deg); }
-  .navigation .navigation__burger-menu #menu__toggle:checked ~ .menu__btn > span::before {
-    top: 0;
-    transform: rotate(0); }
-  .navigation .navigation__burger-menu #menu__toggle:checked ~ .menu__btn > span::after {
-    top: 0;
-    transform: rotate(90deg); }
-  .navigation .navigation__burger-menu #menu__toggle:checked ~ .menu__box {
-    visibility: visible;
-    right: 0; }
-  .navigation .menu__btn > span,
-  .navigation .menu__btn > span::before,
-  .navigation .menu__btn > span::after {
-    transition-duration: 0.25s; }
-  .navigation .menu__box {
-    transition-duration: 0.25s; }
-  .navigation .menu__item {
-    transition-duration: 0.25s; }
-  @media (max-width: 1199px) and (min-width: 768px) {
-    .navigation {
-      height: 106px; }
-      .navigation .navigation__burger-menu .menu__btn {
-        display: none; }
-      .navigation .navigation__burger-menu .menu__box {
-        visibility: visible;
-        position: fixed;
-        right: 631px;
-        top: 0px;
-        display: flex;
-        background-color: transparent;
-        box-shadow: none; }
-        .navigation .navigation__burger-menu .menu__box .menu__item {
-          font-size: 11px; } }
-  @media (min-width: 1200px) {
-    .navigation .navigation__burger-menu .menu__btn {
-      display: none; } }
+    margin: 0 auto; }
+  .nav__list {
+    font-size: 1.6rem;
+    line-height: 1.8rem; }
+  .nav__list-item {
+    background-color: unset;
+    border-bottom: unset;
+    color: #8d81ac;
+    display: inline-block;
+    margin-right: 2rem;
+    font-size: 11px; }
+  .nav__list-item a {
+    border-left: unset;
+    padding-left: 0; } }
 
 .main__wrapper {
-  height: 100%; }
+  padding: 1rem 2rem; }
   .main__wrapper .main__image {
     height: 150px;
     background-image: url("../img/intro-img 1.png");
-    background-size: 100% 100%;
-    width: 100%; }
+    background-size: 100% 100%; }
     @media (max-width: 1199px) and (min-width: 768px) {
       .main__wrapper .main__image {
         height: 361px; } }
@@ -254,243 +272,250 @@
     margin: 25px;
     text-align: center; }
 
-.content .section-content__title {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 22px;
-  text-transform: uppercase;
-  padding-top: 1rem;
-  color: #4e4e4e; }
-
-@media (min-width: 1200px) {
-  .content .section-content__wrapper-row {
-    display: flex;
-    flex-direction: row;
-    flex: 1;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: auto;
-    margin: 0 auto; }
-    .content .section-content__wrapper-row .section-content__wrapper {
-      width: 50%;
-      display: flex;
-      flex-direction: row; }
-      .content .section-content__wrapper-row .section-content__wrapper .text {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        margin: 1rem; }
-        .content .section-content__wrapper-row .section-content__wrapper .text .section-content__img-info {
-          display: block; } }
-
-.content .section-content__wrapper .section-content__img1 {
-  background: url("../img/post-img 1.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 160px;
-  height: 140px;
-  margin: 1rem 0rem; }
-
-.content .section-content__wrapper .text {
-  max-width: 24rem;
-  width: 100%; }
-  .content .section-content__wrapper .text .section-content__img-desc {
-    color: #4e4e4e;
+.content {
+  padding: 0 2rem; }
+  .content .section-content__title {
+    font-family: Roboto;
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
-    line-height: 30px;
-    display: flex;
-    align-items: center;
-    text-transform: none; }
-  .content .section-content__wrapper .text .section-content__img-comments {
-    font-weight: normal;
-    font-size: 11px;
-    line-height: 20px;
-    color: #7c7c7c;
-    text-transform: none; }
-  .content .section-content__wrapper .text .section-content__img-info {
+    font-weight: 700;
+    line-height: 22px;
+    text-transform: uppercase;
+    padding-top: 1rem;
+    color: #4e4e4e; }
+  @media (min-width: 1200px) {
+    .content .section-content__wrapper-row {
+      display: flex;
+      flex-direction: row;
+      flex: 1;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: auto;
+      margin: 0 auto; }
+      .content .section-content__wrapper-row .section-content__wrapper {
+        width: 50%;
+        display: flex;
+        flex-direction: row; }
+        .content .section-content__wrapper-row .section-content__wrapper .text {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          margin: 1rem; }
+          .content .section-content__wrapper-row .section-content__wrapper .text .section-content__img-info {
+            display: block; } }
+  .content .section-content__wrapper .section-content__img1 {
+    background: url("../img/post-img 1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 160px;
+    height: 140px;
+    margin: 1rem 0rem; }
+  .content .section-content__wrapper .text {
+    max-width: 24rem;
+    width: 100%; }
+    .content .section-content__wrapper .text .section-content__img-desc {
+      color: #4e4e4e;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 30px;
+      display: flex;
+      align-items: center;
+      text-transform: none; }
+    .content .section-content__wrapper .text .section-content__img-comments {
+      font-weight: normal;
+      font-size: 11px;
+      line-height: 20px;
+      color: #7c7c7c;
+      text-transform: none; }
+    .content .section-content__wrapper .text .section-content__img-info {
+      display: none; }
+  @media (max-width: 1199px) and (min-width: 768px) {
+    .content .section-content__wrapper {
+      display: flex;
+      flex-direction: row;
+      flex-basis: 100%;
+      flex: 1;
+      flex-wrap: wrap;
+      width: 100%; }
+      .content .section-content__wrapper .text {
+        flex: 2;
+        margin-left: 20px; }
+        .content .section-content__wrapper .text .section-content__img-info {
+          display: block; } }
+  .content .section-content__wrapper .section-content__img2 {
+    background: url("../img/post1img2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 160px;
+    height: 140px;
+    margin: 1rem 0rem; }
+  .content .section-content__wrapper .section-content__img3 {
+    background: url("../img/post4img 1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 160px;
+    height: 140px;
+    margin: 1rem 0rem; }
+  .content .section-content__wrapper .section-content__img4 {
+    background: url("../img/post4.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 160px;
+    height: 140px;
+    margin: 1rem 0rem; }
+
+.insta .insta__title-wrapper {
+  padding: 0 1rem; }
+  .insta .insta__title-wrapper .insta__title2 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 22px;
+    text-transform: uppercase;
+    padding-top: 1rem;
+    color: #4e4e4e;
     display: none; }
+  .insta .insta__title-wrapper .insta__title {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 22px;
+    text-transform: uppercase;
+    padding-top: 1rem;
+    color: #4e4e4e; }
+
+.insta .insta__container {
+  height: 416px;
+  height: auto;
+  width: 90%;
+  margin: 0 auto; }
+  .insta .insta__container .insta__img1 {
+    max-width: 301px;
+    height: 301px;
+    background-image: url("../img/post1.png");
+    background-size: 100% 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    margin: 1rem 0rem; }
+  @media (max-width: 1199px) and (min-width: 768px) {
+    .insta .insta__container {
+      width: 95%;
+      height: auto;
+      display: flex;
+      justify-content: center; }
+      .insta .insta__container .insta__img1 {
+        max-width: 249px;
+        height: 249px;
+        background-image: url("../img/post1.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 1rem 1rem;
+        width: 30%; }
+      .insta .insta__container .insta__img2 {
+        max-width: 249px;
+        height: 249px;
+        background-image: url("../img/insta2.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 1rem 1rem;
+        width: 30%; }
+      .insta .insta__container .insta__img3 {
+        max-width: 249px;
+        height: 249px;
+        background-image: url("../img/post-3.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 1rem 1rem;
+        width: 30%; }
+      .insta .insta__container .insta__img4 {
+        display: none; } }
+  @media (min-width: 1200px) {
+    .insta .insta__container {
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: center; }
+      .insta .insta__container .insta__img1 {
+        max-width: calc(90% / 4);
+        max-width: 249px;
+        height: 249px;
+        background-image: url("../img/post1.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 1rem 1rem;
+        width: 30%; }
+      .insta .insta__container .insta__img2 {
+        max-width: calc(90% / 4);
+        max-width: 249px;
+        height: 249px;
+        background-image: url("../img/insta2.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 1rem 1rem;
+        width: 30%; }
+      .insta .insta__container .insta__img3 {
+        max-width: calc(90% / 4);
+        max-width: 249px;
+        height: 249px;
+        background-image: url("../img/post-3.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 1rem 1rem;
+        width: 30%; }
+      .insta .insta__container .insta__img4 {
+        max-width: calc(90% / 4);
+        max-width: 249px;
+        height: 249px;
+        background-image: url("../img/post1.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 1rem 1rem;
+        width: 30%; } }
 
 @media (max-width: 1199px) and (min-width: 768px) {
-  .content .section-content__wrapper {
-    display: flex;
-    flex-direction: row;
-    flex-basis: 100%;
-    flex: 1;
-    flex-wrap: wrap;
-    width: 100%; }
-    .content .section-content__wrapper .text {
-      flex: 2;
-      margin-left: 20px; }
-      .content .section-content__wrapper .text .section-content__img-info {
+  .insta {
+    width: 100%;
+    height: auto;
+    background-color: lightgray; }
+    .insta .insta__title-wrapper {
+      display: flex;
+      justify-content: space-between;
+      flex: 1; }
+      .insta .insta__title-wrapper .insta__title2 {
         display: block; } }
 
-.content .section-content__wrapper .section-content__img2 {
-  background: url("../img/post1img2.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 160px;
-  height: 140px;
-  margin: 1rem 0rem; }
-
-.content .section-content__wrapper .section-content__img3 {
-  background: url("../img/post4img 1.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 160px;
-  height: 140px;
-  margin: 1rem 0rem; }
-
-.content .section-content__wrapper .section-content__img4 {
-  background: url("../img/post4.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 160px;
-  height: 140px;
-  margin: 1rem 0rem; }
-
-.insta {
-  height: 100%; }
-  .insta .insta__title-wrapper {
-    width: 80%;
-    margin: auto; }
-    .insta .insta__title-wrapper .insta__title2 {
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 22px;
-      text-transform: uppercase;
-      padding-top: 1rem;
-      color: #4e4e4e; }
-    .insta .insta__title-wrapper .insta__title {
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 22px;
-      text-transform: uppercase;
-      padding-top: 1rem;
-      color: #4e4e4e; }
-  .insta .insta__container {
-    height: 416px;
+@media (min-width: 1200px) {
+  .insta {
+    width: 100%;
     height: auto;
-    width: 90%;
-    margin: 0 auto; }
-    .insta .insta__container .insta__img1 {
-      max-width: 301px;
-      height: 301px;
-      background-image: url("../img/post1.png");
-      background-size: 100% 100%;
-      width: 100%;
-      background-repeat: no-repeat;
-      margin: 1rem 0rem; }
-    @media (max-width: 1199px) and (min-width: 768px) {
-      .insta .insta__container {
-        width: 100%;
-        height: auto;
-        display: flex;
-        justify-content: center; }
-        .insta .insta__container .insta__img1 {
-          max-width: calc(90% / 3);
-          max-width: 249px;
-          height: 249px;
-          background-image: url("../img/post1.png");
-          background-size: cover;
-          background-repeat: no-repeat;
-          margin: 1rem 1rem;
-          width: 30%; }
-        .insta .insta__container .insta__img2 {
-          max-width: calc(90% / 3);
-          max-width: 249px;
-          height: 249px;
-          background-image: url("../img/insta2.png");
-          background-size: cover;
-          background-repeat: no-repeat;
-          margin: 1rem 1rem;
-          width: 30%; }
-        .insta .insta__container .insta__img3 {
-          max-width: calc(90% / 3);
-          max-width: 249px;
-          height: 249px;
-          background-image: url("../img/post-3.png");
-          background-size: cover;
-          background-repeat: no-repeat;
-          margin: 1rem 1rem;
-          width: 30%; } }
-    @media (min-width: 1200px) {
-      .insta .insta__container {
-        width: 100%;
-        height: auto;
-        display: flex;
-        justify-content: center; }
-        .insta .insta__container .insta__img1 {
-          max-width: calc(90% / 4);
-          max-width: 249px;
-          height: 249px;
-          background-image: url("../img/post1.png");
-          background-size: cover;
-          background-repeat: no-repeat;
-          margin: 1rem 1rem;
-          width: 30%; }
-        .insta .insta__container .insta__img2 {
-          max-width: calc(90% / 4);
-          max-width: 249px;
-          height: 249px;
-          background-image: url("../img/insta2.png");
-          background-size: cover;
-          background-repeat: no-repeat;
-          margin: 1rem 1rem;
-          width: 30%; }
-        .insta .insta__container .insta__img3 {
-          max-width: calc(90% / 4);
-          max-width: 249px;
-          height: 249px;
-          background-image: url("../img/post-3.png");
-          background-size: cover;
-          background-repeat: no-repeat;
-          margin: 1rem 1rem;
-          width: 30%; }
-        .insta .insta__container .insta__img4 {
-          max-width: calc(90% / 4);
-          max-width: 249px;
-          height: 249px;
-          background-image: url("../img/post1.png");
-          background-size: cover;
-          background-repeat: no-repeat;
-          margin: 1rem 1rem;
-          width: 30%; } }
-  @media (max-width: 1199px) and (min-width: 768px) {
-    .insta {
-      width: 100%;
-      height: auto;
-      background-color: lightgray; }
-      .insta .insta__title-wrapper {
-        display: flex;
-        justify-content: space-between;
-        flex: 1; }
-        .insta .insta__title-wrapper .insta__title2 {
-          display: block; } }
-  @media (min-width: 1200px) {
-    .insta {
-      width: 100%;
-      height: auto;
-      background-color: lightgray; }
-      .insta .insta__title-wrapper {
-        display: flex;
-        justify-content: space-between;
-        flex: 1; }
-        .insta .insta__title-wrapper .insta__title2 {
-          display: block; } }
+    background-color: lightgray; }
+    .insta .insta__title-wrapper {
+      display: flex;
+      justify-content: space-between;
+      flex: 1; }
+      .insta .insta__title-wrapper .insta__title2 {
+        display: block; } }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Roboto; }
+
+body {
+  line-height: 1; }
+
+menu,
+ol,
+ul {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
